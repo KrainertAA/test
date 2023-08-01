@@ -29,8 +29,25 @@ public class Mage {
                 else if (this.damage < mage.damage) return mage.name;
                 else return "draw";
             }
+            public String fight(Mage mage) {
+                if (this.type.equals("fire") && mage.type.equals("ice")) return this.name;
+                else if (this.type.equals("ice") && mage.type.equals("earth")) return this.name;
+                else if (this.type.equals("earth") && mage.type.equals("fire")) return this.name;
+                else if (!this.type.equals(mage.type)) return mage.name;
+                else {
+                    if (this.level > mage.level) return this.name;
+                    else if (this.level < mage.level) return mage.name;
+                    else {
+                        if (this.damage > mage.damage) return this.name;
+                        else if (this.damage < mage.damage) return mage.name;
+                        else return "draw";
+                    }
         }
     }
+
 }
 
-   
+    public static void main(String[] args) {
+        System.out.println("new branch");
+    }
+
